@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinoBot", "DinoBot\DinoBot.csproj", "{89A768AB-15DB-4DAF-B716-70A1FA3B65CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChillBot", "ChillBot\ChillBot.csproj", "{7F2B3FEB-5FAA-40ED-A9FB-633A895889D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{89A768AB-15DB-4DAF-B716-70A1FA3B65CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89A768AB-15DB-4DAF-B716-70A1FA3B65CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89A768AB-15DB-4DAF-B716-70A1FA3B65CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89A768AB-15DB-4DAF-B716-70A1FA3B65CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F2B3FEB-5FAA-40ED-A9FB-633A895889D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F2B3FEB-5FAA-40ED-A9FB-633A895889D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F2B3FEB-5FAA-40ED-A9FB-633A895889D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F2B3FEB-5FAA-40ED-A9FB-633A895889D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A200DD18-4FA8-4237-8C89-996B1DFC60F1}
+		SolutionGuid = {36DEEAA7-C74B-4805-AF3C-36CC4EF15D02}
 	EndGlobalSection
 EndGlobal
