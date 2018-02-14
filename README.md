@@ -36,4 +36,16 @@ One is for production, the other for development (this way I can test stuff whil
 
 The Discord keys are required; the other keys are optional (but omitting them will prevent commands using those APIs from working).
 
+## Commands
+
+`hello|hi|hey`
+
+`echo|say` _message_
+
+`roll|dice` _any d20 expression_
+
+`gif` _[tag]_
+
+`debug info`
+
 _Copyright (c) 2018 **Rane Fields**_
