@@ -5,27 +5,31 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
 using Discord.Commands;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Microsoft.Extensions.DependencyInjection;
+using ChillBot.ApiData;
 using ChillBot.Services;
 
 namespace ChillBot
 {
     public class Bot
     {
-        private BotSecrets botSecrets;
         private DiscordSocketClient client;
         private CommandService commands;
         private IServiceProvider services;
 
-        public async Task Run()
+        private BotSecrets botSecrets;
+        private GiphyService giphy;
+
+        public async Task StartupAsync()
         {
             client = new DiscordSocketClient();
             commands = new CommandService();
+            botSecrets = await BotSecrets.LoadFromFile();
+            giphy = new GiphyService(botSecrets.Giphy); 
             services = new ServiceCollection()
                 .AddSingleton(client)
                 .AddSingleton(commands)
+                .AddSingleton(giphy)
                 .AddSingleton<RandomNumberService>()
                 .AddSingleton<FailMessageService>()
                 .BuildServiceProvider();
@@ -34,8 +38,7 @@ namespace ChillBot
 
             client.Log += Log;
 
-            botSecrets = await BotSecrets.LoadFromFile();
-            await client.LoginAsync(TokenType.Bot, botSecrets.Token);
+            await client.LoginAsync(TokenType.Bot, botSecrets.Discord.DevelopmentToken);
             await client.StartAsync();
 
             // Task doesn't return until program exit
