@@ -22,9 +22,19 @@ namespace ChillBot.Services
 
         public async Task<GiphyImage> GetRandomImageAsync()
         {
+            return await GetImage(null);
+        }
+
+        public async Task<GiphyImage> GetImage(string tag)
+        {
             var client = new RestClient(apiUrl);
             var request = new RestRequest("/gifs/random", Method.GET);
             request.AddParameter("api_key", secrets.ApiKey);
+            if (tag != null)
+            {
+                request.AddParameter("tag", tag);
+            }
+            request.AddParameter("rating", "PG-13");
             var response = await client.ExecuteTaskAsync(request) as RestResponse;
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
             GiphyImage result = JsonConvert.DeserializeObject<GiphyImage>(jsonResponse["data"].ToString());

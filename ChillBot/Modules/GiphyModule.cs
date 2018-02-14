@@ -19,13 +19,25 @@ namespace ChillBot.Modules
             this.giphy = giphy;
         }
 
-        #region
-        [Command("random")]
-        [Alias("rand", "r")]
-        [Summary("Gets a random gif from Giphy")]
+        #region Random
+        [Command]
+        [Summary("Gets a random gif from Giphy.")]
         public async Task RandomAsync()
         {
             GiphyImage img = await giphy.GetRandomImageAsync();
+            await ReplyAsync(img.Image_Url);
+        }
+        #endregion
+
+        #region RandomByTag
+        [Command]
+        [Summary("Gets a gif from Giphy using the provided tag.")]
+        public async Task RandomByTagAsync
+        (
+            [Remainder, Summary("The tag to search for.")] string query
+        )
+        {
+            GiphyImage img = await giphy.GetImage(query);
             await ReplyAsync(img.Image_Url);
         }
         #endregion
