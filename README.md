@@ -31,7 +31,9 @@ In order to run a ChillBot of your own, you must go to the provided links and re
 ```
 
 I actually use two Discord bots as seen here:
+
 ![two-bots](https://i.imgur.com/IToBEv5.png)
+
 One is for production, the other for development (this way I can test stuff while still leaving the bot online). If you wish to use only one bot for both modes, you can just put the same token in for both the `ProductionToken` and the `DevelopmentToken`.
 
 The Discord keys are required; the other keys are optional (but omitting them will prevent commands using those APIs from working).
